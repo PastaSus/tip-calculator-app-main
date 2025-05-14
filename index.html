@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main class="main grid">
+      <img src="images/logo.svg" alt="" aria-hidden="true" class="logo" />
+
+      <form class="tip-calculator__form">
+        <!-- Bill Section -->
+
+        <div class="container grid two-col">
+          <div class="col">
+            <section
+              class="tip-calculator__section tip-calculator__section--bill"
+            >
+              <label for="bill-input" class="tip-calculator__label flex">
+                <span>Bill</span>
+                <span
+                  class="error-msg"
+                  id="bill-error"
+                  aria-live="polite"
+                ></span
+              ></label>
+              <div class="tip-calculator__input-wrapper flex">
+                <img
+                  class="tip-calculator__icon"
+                  src="images/icon-dollar.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <div class="input__container">
+                  <input
+                    type="number"
+                    id="bill-input"
+                    aria-describedby="bill-error"
+                    class="tip-calculator__input"
+                    placeholder="0"
+                    min="1"
+                    dir="rtl"
+                    required
+                  />
+                </div>
+              </div>
+            </section>
+
+            <!-- Tip Selection -->
+            <fieldset
+              class="tip-calculator__fieldset tip-calculator__section--tip"
+            >
+              <legend class="tip-calculator__legend">Select Tip %</legend>
+
+              <div class="tip-calculator__tip-options grid three-col">
+                <button
+                  type="button"
+                  class="tip-calculator__button btn"
+                  data-tip="5"
+                >
+                  5%
+                </button>
+                <button
+                  type="button"
+                  class="tip-calculator__button btn"
+                  data-tip="10"
+                >
+                  10%
+                </button>
+                <button
+                  type="button"
+                  class="tip-calculator__button btn"
+                  data-tip="15"
+                >
+                  15%
+                </button>
+                <button
+                  type="button"
+                  class="tip-calculator__button btn"
+                  data-tip="25"
+                >
+                  25%
+                </button>
+                <button
+                  type="button"
+                  class="tip-calculator__button btn"
+                  data-tip="50"
+                >
+                  50%
+                </button>
+
+                <input
+                  type="number"
+                  id="custom-tip"
+                  class="tip-calculator__input tip-calculator__input--custom"
+                  dir="rtl"
+                  placeholder="Custom"
+                  min="0"
+                />
+              </div>
+            </fieldset>
+
+            <!-- People Section -->
+            <section
+              class="tip-calculator__section tip-calculator__section--people"
+            >
+              <label for="people-input" class="tip-calculator__label flex">
+                <span>Number of People</span
+                ><span
+                  class="error-msg"
+                  id="people-error"
+                  aria-live="polite"
+                ></span>
+              </label>
+              <div class="tip-calculator__input-wrapper flex">
+                <img
+                  class="tip-calculator__icon"
+                  src="images/icon-person.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <div class="input__container">
+                  <input
+                    type="number"
+                    id="people-input"
+                    aria-describedby="people-error"
+                    class="tip-calculator__input"
+                    placeholder="0"
+                    min="1"
+                    dir="rtl"
+                    required
+                  />
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Results -->
+
+          <aside class="tip-calculator__results col">
+            <div class="tip-calculator__result flex">
+              <p class="tip-calculator__result-label flex">
+                <span>Tip Amount </span><span>/ person</span>
+              </p>
+              <div class="tip-calculator__amount flex" id="tipPerPerson">
+                <span class="dollar-sign">$</span>
+                <output class="tip__amount">0.00</output>
+              </div>
+            </div>
+
+            <div class="tip-calculator__result flex">
+              <p class="tip-calculator__result-label flex">
+                <span>Total</span><span>/ person</span>
+              </p>
+              <div class="tip-calculator__amount flex" id="totalPerPerson">
+                <span class="dollar-sign">$</span>
+                <output class="tip__amount">0.00</output>
+              </div>
+            </div>
+
+            <button type="reset" class="tip-calculator__reset btn" disabled>
+              RESET
+            </button>
+          </aside>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
