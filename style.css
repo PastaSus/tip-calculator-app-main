@@ -188,7 +188,8 @@ p {
 .container {
   margin: 0 auto;
 
-  max-width: 315px;
+  max-width: 19.6875rem;
+  /* 315px */
 }
 
 .main {
@@ -223,6 +224,10 @@ p {
 .tip-calculator__section--bill {
 }
 
+.label-error__container {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .tip-calculator__label,
 .tip-calculator__legend {
   color: var(--Grey-500);
@@ -234,6 +239,7 @@ p {
 
 .error-msg {
   color: hsla(0, 100%, 50%, 0.7);
+  text-align: end;
 }
 
 .tip-calculator__input-wrapper {
@@ -416,7 +422,8 @@ button[data-tip="15"],
 
 @media (min-width: 48em) {
   .container {
-    max-width: 550px;
+    max-width: 34.375rem;
+    /* 550px */
   }
 
   .main {
@@ -445,7 +452,8 @@ button[data-tip="15"],
   }
 
   .container {
-    max-width: 800px;
+    max-width: 50rem;
+    /* 800px */
   }
 
   .tip-calculator__form {
