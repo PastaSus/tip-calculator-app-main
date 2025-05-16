@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       rangeUnderflow:
         input.id === "bill-input"
           ? "Bill must be at least 1."
-          : "Must be at least 1 person.",
+          : "Can't be zero",
     };
 
     for (const errorType in errors) {

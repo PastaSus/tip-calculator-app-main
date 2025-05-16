@@ -20,6 +20,14 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ## Overview
 
+This app lets users:
+
+Enter a bill amount
+Select a tip percentage or enter a custom tip
+Enter the number of people splitting the bill
+See the tip amount and total per person
+Reset all fields easily
+
 ### The challenge
 
 Users should be able to:

@@ -258,6 +258,7 @@ p {
 
 .tip-calculator__input {
   /* position: relative; */
+  text-align: end;
 
   width: 100%;
   border: none;
@@ -389,6 +390,7 @@ button[data-tip="15"],
 
 .tip-calculator__result-label {
   flex-direction: column;
+  gap: var(--spacing-4);
 }
 
 .tip-calculator__result-label span:last-child {
