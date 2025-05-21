@@ -185,6 +185,17 @@ p {
   --spacing-128: 8rem; /* 128px */
 }
 
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .container {
   margin: 0 auto;
 
@@ -333,6 +344,7 @@ input[type="number"]::placeholder {
   font-weight: 700;
 
   color: var(--Grey-50);
+  text-align: center;
 }
 
 /* .btn:hover,
@@ -350,7 +362,8 @@ button:disabled {
 .tip-calculator__reset:enabled {
   /* background-color: var(--Green-400); */
 }
-button[data-tip="15"],
+
+.fifteen,
 .tip-calculator__reset {
   background-color: var(--Green-400);
   color: var(--Green-900);
@@ -475,7 +488,7 @@ button[data-tip="15"],
     margin-block-end: var(--spacing-32);
   }
 
-  button[data-tip="15"] {
+  .fifteen {
     background-color: var(--Green-900);
 
     color: var(--Grey-50);

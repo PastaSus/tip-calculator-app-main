@@ -26,16 +26,14 @@
   </head>
   <body>
     <main class="main grid">
-      <img src="images/logo.svg" alt="" class="logo" />
+      <img src="images/logo.svg" alt="app logo" class="logo" />
 
       <form class="tip-calculator__form">
         <!-- Bill Section -->
 
         <div class="container grid two-col">
-          <div class="col">
-            <section
-              class="tip-calculator__section tip-calculator__section--bill"
-            >
+          <section class="col" aria-label="Calculator section">
+            <div class="tip-calculator__section tip-calculator__section--bill">
               <div class="label-error__container grid two-col">
                 <label for="bill-input" class="tip-calculator__label flex">
                   Bill
@@ -59,12 +57,14 @@
                     aria-describedby="bill-error"
                     class="tip-calculator__input"
                     placeholder="0"
+                    inputmode="decimal"
                     min="1"
                     required
+                    aria-label="Bill amount in dollars"
                   />
                 </div>
               </div>
-            </section>
+            </div>
 
             <!-- Tip Selection -->
             <fieldset
@@ -73,55 +73,73 @@
               <legend class="tip-calculator__legend">Select Tip %</legend>
 
               <div class="tip-calculator__tip-options grid three-col">
-                <button
-                  type="button"
-                  class="tip-calculator__button btn"
-                  data-tip="5"
-                >
+                <label for="5" class="btn tip-calculator__button">
+                  <input
+                    type="radio"
+                    data-tip="5"
+                    id="5"
+                    class="visually-hidden"
+                  />
                   5%
-                </button>
-                <button
-                  type="button"
-                  class="tip-calculator__button btn"
-                  data-tip="10"
+                </label>
+
+                <label for="10" class="btn tip-calculator__button">
+                  <input
+                    type="radio"
+                    data-tip="10"
+                    id="10"
+                    class="visually-hidden"
+                  />
+                  10%</label
                 >
-                  10%
-                </button>
-                <button
-                  type="button"
-                  class="tip-calculator__button btn"
-                  data-tip="15"
+
+                <label for="15" class="fifteen btn tip-calculator__button">
+                  <input
+                    type="radio"
+                    data-tip="15"
+                    id="15"
+                    class="visually-hidden"
+                  />
+                  15%</label
                 >
-                  15%
-                </button>
-                <button
-                  type="button"
-                  class="tip-calculator__button btn"
-                  data-tip="25"
-                >
+
+                <label for="25" class="btn tip-calculator__button">
+                  <input
+                    type="radio"
+                    data-tip="25"
+                    id="25"
+                    class="visually-hidden"
+                  />
                   25%
-                </button>
-                <button
-                  type="button"
-                  class="tip-calculator__button btn"
-                  data-tip="50"
+                </label>
+
+                <label for="50" class="btn tip-calculator__button">
+                  <input
+                    type="radio"
+                    data-tip="50"
+                    id="50"
+                    class="visually-hidden"
+                  />
+
+                  50%</label
                 >
-                  50%
-                </button>
 
                 <input
                   type="number"
                   id="custom-tip"
                   class="tip-calculator__input tip-calculator__input--custom"
                   placeholder="Custom"
-                  min="0"
-                  aria-label="Enter custom tip percentage"
+                  inputmode="decimal"
+                  title="Please enter a valid number"
                 />
+                <label for="custom-tip" class="visually-hidden"
+                  >Custom tip input</label
+                >
               </div>
             </fieldset>
 
             <!-- People Section -->
-            <section
+            <div
               class="tip-calculator__section tip-calculator__section--people"
             >
               <div class="label-error__container grid two-col">
@@ -147,33 +165,40 @@
                     aria-describedby="people-error"
                     class="tip-calculator__input"
                     placeholder="0"
+                    inputmode="decimal"
                     min="1"
                     step="1"
                     required
+                    aria-label="Number of people to pay"
                   />
                 </div>
               </div>
-            </section>
-          </div>
+            </div>
+          </section>
 
           <!-- Results -->
 
-          <section class="tip-calculator__results col">
+          <section
+            class="tip-calculator__results col"
+            aria-label="Results section"
+          >
             <div class="tip-calculator__result flex">
               <label
                 class="tip-calculator__result-label flex"
                 for="tip-per-person-output"
+                id="tip-per-person-label"
               >
                 <span>Tip Amount </span><span>/ person</span>
               </label>
               <div class="tip-calculator__amount flex" id="tipPerPerson">
-                <span class="dollar-sign">$</span>
+                <span class="dollar-sign" aria-hidden="true">$</span>
                 <output
                   class="tip__amount"
-                  aria-label="Tip Amount in dollars"
                   id="tip-per-person-output"
-                  >0.00</output
-                >
+                  aria-labelledby="tip-per-person-label"
+                  aria-live="polite"
+                  >0.00<span class="visually-hidden">dollars</span>
+                </output>
               </div>
             </div>
 
@@ -181,17 +206,19 @@
               <label
                 class="tip-calculator__result-label flex"
                 for="total-per-person-output"
+                id="total-per-person-label"
               >
                 <span>Total</span><span>/ person</span>
               </label>
               <div class="tip-calculator__amount flex" id="totalPerPerson">
-                <span class="dollar-sign">$</span>
+                <span class="dollar-sign" aria-hidden="true">$</span>
                 <output
                   class="tip__amount"
-                  aria-label="Tip Amount in dollars"
                   id="total-per-person-output"
-                  >0.00</output
-                >
+                  aria-labelledby="total-per-person-label"
+                  aria-live="polite"
+                  >0.00<span class="visually-hidden">dollars</span>
+                </output>
               </div>
             </div>
 
