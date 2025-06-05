@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         input.id === "bill-input"
           ? "Bill must be at least 1."
           : "Can't be zero",
+      patternMismatch: "Only numbers are allowed.",
     };
 
     for (const errorType in errors) {
